@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateQueueTable extends Migration
+class CreateTablequeueTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateQueueTable extends Migration
      */
     public function up()
     {
-        Schema::create('queue', function (Blueprint $table) {
+        Schema::create('tablequeue', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->dateTime('created_at');
-            $table->string('number_queue');
+            $table->string('number');
+            $table->timestamps();
         });
     }
 
@@ -27,6 +27,6 @@ class CreateQueueTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('queue');
+        Schema::dropIfExists('tablequeue');
     }
 }
